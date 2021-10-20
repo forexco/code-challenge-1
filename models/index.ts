@@ -65,5 +65,3 @@ connectionTest();
 // db.Sequelize = Sequelize;
 
 // module.exports = db;
-
-npx sequelize-cli model:generate --name Post --attributes postId:integer,title:string,authorId:integer,content:text,excerpt:text,postDate:string
