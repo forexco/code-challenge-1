@@ -3,12 +3,18 @@ module.exports = (sequelize, DataTypes) => {
   const Author = sequelize.define(
     'Author',
     {
-       // Model attributes are defined here
-       authorId: DataTypes.INTEGER,
-       authorName: DataTypes.STRING,
-       anthorCountry: DataTypes.STRING
+      // Model attributes are defined here
+      authorId: {
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false,
+        type: DataTypes.INTEGER,
+
+      },
+      authorName: DataTypes.STRING,
+      anthorCountry: DataTypes.STRING
     },
-    {},
+    { timestamps: false },
   );
 
   Author.associate = function (models) {
