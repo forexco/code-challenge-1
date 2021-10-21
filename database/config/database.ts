@@ -1,6 +1,5 @@
 module.exports = {
-    development: {
-        
+    development: {        
         dialect: 'postgres',
         protocol: 'postgres',
         host: 'ec2-54-164-56-10.compute-1.amazonaws.com',

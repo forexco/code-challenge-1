@@ -1,4 +1,10 @@
-module.exports = (sequelize, DataTypes) => {
+export const Author = (sequelize: {
+// module.exports = (sequelize: {
+    define: (arg0: string, arg1: {
+      // Model attributes are defined here
+      authorId: { primaryKey: boolean; autoIncrement: boolean; allowNull: boolean; type: any; }; authorName: any; anthorCountry: any;
+    }, arg2: { timestamps: boolean; }) => any;
+  }, DataTypes: { INTEGER: any; STRING: any; }) => {
   console.log(`sequelize model:${sequelize}`);
   const Author = sequelize.define(
     'Author',
@@ -9,7 +15,6 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true,
         allowNull: false,
         type: DataTypes.INTEGER,
-
       },
       authorName: DataTypes.STRING,
       anthorCountry: DataTypes.STRING
@@ -22,32 +27,5 @@ module.exports = (sequelize, DataTypes) => {
     Author.hasMany(models.Post, { foreignKey: 'authorId', as: 'posts' });
   };
   console.log(`Post:${Author}`);
-  return Author;
-
-};
-
-'use strict';
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
-  class Author extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
-  };
-  Author.init({
-    authorId: DataTypes.INTEGER,
-    authorName: DataTypes.STRING,
-    anthorCountry: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Author',
-  });
   return Author;
 };

@@ -4,7 +4,9 @@
 // };
 
 require('dotenv').config();
-const { Sequelize } = require('sequelize');
+// import 'dotenv';
+import { Sequelize } from 'sequelize-typescript';
+
 // const env = process.env.NODE_ENV || 'development';
 // const config = require('../config/config.json')[env];
 
